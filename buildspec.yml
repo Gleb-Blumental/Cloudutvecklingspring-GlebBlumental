@@ -1,21 +1,16 @@
 version: 0.2
-os: linux
 
 phases:
   install:
     runtime-versions:
-      java: corretto21
-    commands:
-      - echo Installing Maven...
-      - yum install -y maven
+      java: corretto22
   pre_build:
     commands:
-      - echo Setting JAVA_HOME and PATH...
-      - export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
+      - echo Starting build...
+      - export JAVA_HOME=/usr/lib/jvm/java-22-openjdk
       - export PATH=$JAVA_HOME/bin:$PATH
   build:
     commands:
-      - echo Starting build...
       - mvn clean install -DskipTests
   post_build:
     commands:
