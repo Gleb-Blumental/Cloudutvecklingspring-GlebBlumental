@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Spring Cognito Test</title>
+</head>
+<body>
+<h1>Spring Cognito Test</h1>
+<p>This is my test page, welcome!</p>
+
+<form action="/user" method="post">
+  <input type="hidden" th:username="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+  <button type="submit">Post test</button>
+</form>
+
+</body>
+</html>
