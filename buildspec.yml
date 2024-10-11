@@ -1,43 +1,33 @@
-artifacts:
-  discard-paths: true
-  files:
-  - deploy/**
-  - target/*.jar
-deploy:
-  phases:
-    deploy:
-      commands:
-      - echo "Deploying application to Elastic Beanstalk"
-      - eb deploy
-    pre_deploy:
-      commands:
-      - echo "Installing AWS Elastic Beanstalk CLI"
-      - pip install --upgrade awsebcli
-      - eb init -p java --region eu-north-1
-eb_codebuild_settings:
-  Image: aws/codebuild/eb-java-8-amazonlinux-64:2.4.3
-  application: CloudUtveckling-GB
-  environment: CloudUtveckling-GB-env
-  version_label: 1
+version: 0.2
+
 phases:
-  build:
-    commands:
-    - echo "Building application"
-    - mvn package -DskipTests
-    - echo "Application build complete"
   install:
-    commands:
-    - echo "Installing dependencies"
-    - mvn install -DskipTests
     runtime-versions:
       java: corretto11
-  post_build:
     commands:
-    - echo "Post-build phase: preparing deployment package"
-    - mkdir -p deploy
-    - cp target/*.jar deploy/
+      - echo "Installing dependencies"
+      - mvn install -DskipTests
+
   pre_build:
     commands:
-    - echo "Preparing build"
-    - mvn clean package
-version: 0.2
+      - echo "Preparing build"
+      - mvn clean package
+
+  build:
+    commands:
+      - echo "Building application"
+      - mvn package -DskipTests
+      - echo "Application build complete"
+
+  post_build:
+    commands:
+      - echo "Post-build phase: preparing deployment package"
+      - mkdir -p deploy
+      - cp target/*.jar deploy/
+
+artifacts:
+  files:
+    - target/*.jar
+    - deploy/**
+  discard-paths: true
+
