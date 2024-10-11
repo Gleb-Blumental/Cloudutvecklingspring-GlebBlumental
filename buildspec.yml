@@ -3,11 +3,11 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      java: corretto21
+      java: corretto11
   pre_build:
     commands:
       - echo Starting build...
-      - export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
+      - export JAVA_HOME=/usr/lib/jvm/java-22-openjdk
       - export PATH=$JAVA_HOME/bin:$PATH
   build:
     commands:
