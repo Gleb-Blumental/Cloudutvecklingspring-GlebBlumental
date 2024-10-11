@@ -1,4 +1,5 @@
 version: 0.2
+os: linux
 
 eb_codebuild_settings:
   application: CloudUtveckling-GB
