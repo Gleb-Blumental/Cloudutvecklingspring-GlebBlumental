@@ -21,10 +21,14 @@ public class SecurityConfiguration {
                         .requestMatchers("/", "/home", "login").permitAll()
                         .anyRequest().authenticated())
                 .oauth2Login(oauth2 -> oauth2
-                        .loginPage("/login")
-                        .defaultSuccessUrl("/home", true))
+                        .loginPage("/oauth2/code/cognito")
+                        .defaultSuccessUrl("/home", true)
+                        .failureUrl("/login?error=true"))
+
                 .logout(logout -> logout
-                        .logoutSuccessUrl("/"));
+                        .logoutSuccessUrl("/home")
+                        .invalidateHttpSession(true)
+                        .clearAuthentication(true));
 
         return http.build();
     }

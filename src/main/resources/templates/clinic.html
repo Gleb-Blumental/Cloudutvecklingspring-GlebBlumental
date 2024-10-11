@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinic page</title>
+</head>
+<body>
+<h1>Clinic Management</h1>
+
+<!-- Form to create a clinic -->
+<h2>Add Clinic information</h2>
+<label for="clinicName">Clinic Name:</label>
+<input type="text" id="clinicName"><br>
+<label for="clinicAddress">Our Address:</label>
+<input type="text" id="clinicAddress"><br>
+<button onclick="createClinic()">Add Clinic information</button>
+
+<!-- Form to update clinic -->
+<h2>Update Clinic Information</h2>
+<label for="clinicId">Clinic ID:</label>
+<input type="text" id="clinicId"><br>
+<button onclick="updateClinic()">Update Clinic information</button>
+
+<!-- Button to view clinic information -->
+<h2>View Clinic information</h2>
+<label for="clinicId">Clinic ID:</label>
+<input type="text" id="clinicId"><br>
+<button onclick="viewClinic()">View Clinic Info</button>
+</body>
+<script>
+  // Create a new clinic
+  async function createClinic() {
+      const clinicData = {
+          name: document.getElementById('clinicName').value,
+          address: document.getElementById('clinicAddress').value,
+      };
+
+      try {
+          const response = await fetch('/api/clinic', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(clinicData),
+          });
+          const result = await response.text();
+          alert(result);
+      } catch (error) {
+          console.error('Error creating clinic:', error);
+      }
+  }
+
+  // Update clinic information
+  async function updateClinic() {
+      const clinicId = document.getElementById('clinicId').value;
+      const updatedData = {
+          name: document.getElementById('clinicName').value,
+          address: document.getElementById('clinicAddress').value,
+      };
+
+      try {
+          const response = await fetch(`/api/clinic/${clinicId}`, {
+              method: 'PUT',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(updatedData),
+          });
+          const result = await response.text();
+          alert(result);
+      } catch (error) {
+          console.error('Error updating clinic:', error);
+      }
+  }
+
+  // View clinic information
+  async function viewClinic() {
+      const clinicId = document.getElementById('clinicId').value;
+
+      try {
+          const response = await fetch(`/api/clinic/${clinicId}`);
+          const data = await response.json();
+          alert('Clinic Info: ' + JSON.stringify(data));
+      } catch (error) {
+          console.error('Error fetching clinic information:', error);
+      }
+  }
+</script>
+</html>

@@ -3,11 +3,11 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      java: corretto22
+      java: corretto21
   pre_build:
     commands:
       - echo Starting build...
-      - export JAVA_HOME=/usr/lib/jvm/java-22-openjdk
+      - export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
       - export PATH=$JAVA_HOME/bin:$PATH
   build:
     commands:
@@ -19,6 +19,5 @@ phases:
 artifacts:
   files:
     - target/*.jar
-    - scripts/*.sh
-    - appspec.yml
+    -
   discard-paths: yes
