@@ -19,5 +19,17 @@ public class MainController {
     public String getHomePage() {
         return "home";
     }
+    @GetMapping("/menu")
+    public String getMenuPage() {
+        return "menu"; // This points to templates/menu.html
+    }
+    @GetMapping("/clinic")
+    public String getClientPage() {
+        return "client";
+    }
 
+    @GetMapping("/clinic")
+    public String getClinicPage() {
+        return "clinic"; // This points to templates/menu.html
+    }
 }
