@@ -3,31 +3,23 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      java: corretto11
-    commands:
-      - echo "Installing dependencies"
-      - mvn install -DskipTests
-
+      java: corretto22
   pre_build:
     commands:
-      - echo "Preparing build"
-      - mvn clean package
-
+      - echo Starting build...
+      - export JAVA_HOME=/usr/lib/jvm/java-22-openjdk
+      - export PATH=$JAVA_HOME/bin:$PATH
   build:
     commands:
-      - echo "Building application"
-      - mvn package -DskipTests
-      - echo "Application build complete"
-
+      - mvn clean install -DskipTests
   post_build:
     commands:
-      - echo "Post-build phase: preparing deployment package"
-      - mkdir -p deploy
-      - cp target/*.jar deploy/
+      - echo Build complete
 
 artifacts:
   files:
     - target/*.jar
-    - deploy/**
-  discard-paths: true
+    - scripts/*.sh
+    - appspec.yml
+  discard-paths: yes
 
