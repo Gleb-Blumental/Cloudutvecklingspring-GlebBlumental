@@ -1,21 +1,26 @@
 version: 0.2
 
 eb_codebuild_settings:
-  CodeBuildServiceRole: arn:aws:iam::332935753543:role/CodeBuildServiceRole
+  application: CloudUtveckling-GB
+  environment: CloudUtveckling-GB-env
+  ComputeType: BUILD_GENERAL1_SMALL
+  Image: aws/codebuild/amazonlinux2-x86_64-standard:3.0
+  Timeout: 30
+
+  version_label: 1
 
 phases:
   install:
     runtime-versions:
-      java: corretto22
+      java: corretto11
     commands:
       - echo "Installing dependencies"
       - mvn install -DskipTests
 
   pre_build:
     commands:
-      - echo Starting build...
-      - export JAVA_HOME=/usr/lib/jvm/java-22-openjdk
-      - export PATH=$JAVA_HOME/bin:$PATH
+      - echo "Preparing build"
+      - mvn clean package
 
   build:
     commands:
@@ -26,12 +31,29 @@ phases:
   post_build:
     commands:
       - echo "Post-build phase: preparing deployment package"
-      - echo Build complete
       - mkdir -p deploy
       - cp target/*.jar deploy/
+      - echo "Creating application version"
+      - echo `date +%Y-%m-%d-%H-%M-%S` > version.txt
+      - cat version.txt
 
 artifacts:
   files:
+    - deploy/**/*
     - target/*.jar
-    - deploy/**
-  discard-paths: true
+    - version.txt
+  discard-paths: yes
+
+
+deploy:
+  phases:
+    pre_deploy:
+      commands:
+        - echo "Installing AWS Elastic Beanstalk CLI"
+        - pip install --upgrade awsebcli
+        - eb init -p java --region eu-north-1
+    deploy:
+      commands:
+        - echo "Deploying application to Elastic Beanstalk"
+        - eb deploy
+
