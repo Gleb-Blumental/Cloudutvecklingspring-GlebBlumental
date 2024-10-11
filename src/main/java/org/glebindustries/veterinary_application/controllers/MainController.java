@@ -23,7 +23,7 @@ public class MainController {
     public String getMenuPage() {
         return "menu"; // This points to templates/menu.html
     }
-    @GetMapping("/clinic")
+    @GetMapping("/client")
     public String getClientPage() {
         return "client";
     }
