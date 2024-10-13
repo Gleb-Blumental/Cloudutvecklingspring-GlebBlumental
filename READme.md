@@ -51,7 +51,7 @@ undviker du att manuellt hantera infrastrukturen och kan fokusera mer på applik
     - Gå in på beanstalk och tryck på "Create Application"
       ![Beanstalk1](images/Beanstalk1.png)
     - Då har Applikationen konfigurerats och nu trycker du på "Create Environment"
-      ![Beanstalk2](images/Beanstalk2.png)
+      ![Beanstalk2](images/BeanStalk2.png)
     - Namnge miljö och välj plattformen som applikationen ska köras på, du kan också välja domänen
       ![Beanstalk3](images/Beanstalk3.png)
     - Välj eller skaffa en ny service roll för miljön
@@ -61,7 +61,7 @@ undviker du att manuellt hantera infrastrukturen och kan fokusera mer på applik
     - Välj containrar och konfigurera CloudWatch, samt vilken EC2 instansgrupp ska applikationen tillhöra
       ![Beanstalk6](images/Beanstalk6.png)
     - Vidare förinställning för EC2 instanser
-      ![Beanstalk7](images/Beanstalk7.png)
+      ![Beanstalk7](images/BeanStalk7.png)
     - Översikt över alla dina inställningar, tryck på "Submit" om allt stämmer
       ![Beanstalk8](images/Beanstalk8.png)
     - Länk till guide om Elastic Beanstalk installation:
