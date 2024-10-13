@@ -1,16 +1,12 @@
 # Veterinary Clinic Management System
 
-## 1. URL till Web Application
-[Access the Web Application](https://your-application-url.com)  
-WIP
-
-## 2. Sammanfattning
+## 1. Sammanfattning
 Denna dokumentation ger en omfattande guide till Veterinary Clinic Management System, inklusive en kort översikt över
 applikationen, databasstrukturen och driftsättningsstrategier. Den jämför också olika driftsättningsmetoder och ger
 steg-för-steg-instruktioner för att konfigurera och köra programmet med hjälp av Jenkins i kombination med AWS Pipeline.
 
 
-## 3. Applikationsdiagram och databasdiagram
+## 2. Applikationsdiagram och databasdiagram
 Följande diagram visar strukturen för både den applikationen och databasen som används i detta program, 
 inklusive tjänster, driftsättningsmetoder, tabellerna och deras relationer.
 
@@ -24,14 +20,14 @@ inklusive tjänster, driftsättningsmetoder, tabellerna och deras relationer.
 - genom behandlingsrelaterad information (`animaltreatment`, `animaltreatmentdate`),
 - och har en `Many-to-One`-relation med båda tabellerna.
 
-## 4. Applikationsöversikt
+## 3 Applikationsöversikt
 **Veterinary Clinic Management System** är en webbaserad applikation som är utformad för att hantera
 veterinärklinikens verksamhet. Systemet gör det möjligt för klinikpersonalen att hantera klient- och klinikinformation, 
 inklusive de djur som behandlas på kliniken, behandlingsdetaljer och klientens djurhälsohistorik.
 Plattformen är skräddarsydd för att effektivisera processen med att boka, hantera och spåra djurbesök,
 för att säkerställa en smidig verksamhet för både veterinärer och deras kunder.
 
-## 5. Driftsättningsmetoder
+## 4. Driftsättningsmetoder
 
 ### Method 1 AWS Elastic Beanstalk med AWS PipeLine
 
@@ -105,7 +101,7 @@ undviker du att manuellt hantera infrastrukturen och kan fokusera mer på applik
     - När pipelinen är klar distribueras applikationen till Elastic Beanstalk och du kan besöka dess offentliga URL för att verifiera att allt fungerar korrekt.
     - Övervaka och hantera driftsättningen via Elastic Beanstalk Dashboard eller AWS CLI.
 
-## 6. Jämförelsen mellan olika driftsättningsmetoder
+## 5. Jämförelsen mellan olika driftsättningsmetoder
 
 ### Jenkins med AWS Pipeline
 #### Fördelar:
@@ -154,7 +150,7 @@ fixa den.
 - Mer komplex installation jämfört med hanterade tjänster som Elastic Beanstalk.
 - Kräver löpande underhåll av EC2-instanser och konfigurationer.
 
-## 7. Slutsats
+## 6. Slutsats
 I det här projektet valdes Jenkins i kombination med AWS Pipeline för driftsättning på grund av dess 
 stabila automatiseringsfunktioner och flexibilitet. Utöver detta, så valde jag att containernisera projektet med
 Docker för mer flexibiletet med projektets underhåll, mer säkerhet och integration med Jenkins och CodePipeline. 
