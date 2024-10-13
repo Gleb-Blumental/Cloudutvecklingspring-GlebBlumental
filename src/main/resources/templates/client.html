@@ -6,76 +6,69 @@
   <title>Client Page</title>
 </head>
 <body>
-<h1>View client Information</h1>
+<nav class="navbar">
+  <a class="navbar-item" href="/home">Home</a>
+  <a class="navbar-item" href="/clinic">Clinic page</a>
+  <a class="navbar-item" href="/menu">Menu</a>
+  <a class="navbar-item" href="/logout">Logout</a>
+</nav>
 
-<!-- Form to create a client -->
-<h2>Create Your Profile</h2>
-<form th:action="@{/clients}" th:method="post">
-  <label for="name">Name:</label>
-  <input type="text" name="name" th:value="${client.name}"><br><br>
-  <label for="email">Email:</label>
-  <input type="text" name="phone" th:value="${client.phone}"><br><br>
-  <input type="submit" value="Create Client">
-</form>
+<section class="section">
+  <div class="container">
+    <div class="form-container">
+      <h2 class="title is-3">Update your Profile Information</h2>
+      <form th:action="@{/clients/{id}(id=${client.id})}" th:method="put">
+        <div class="field">
+          <label class="label" for="name">Name:</label>
+          <div class="control">
+            <input class="input" type="text" id="name" name="name" th:value="${client.name}" required>
+          </div>
+        </div>
 
+        <div class="field">
+          <label class="label" for="phone">Phone:</label>
+          <div class="control">
+            <input class="input" type="text" id="phone" name="phone" th:value="${client.phone}">
+          </div>
+        </div>
 
-<!-- Form to update client -->
-<h2>Update your Profile Information</h2>
-<form th:action="@{/clients/{id}(id=${client.id})}" th:method="put">
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name" th:value="${client.name}"><br><br>
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email" th:value="${client.email}"><br><br>
-  <label for="phone">Phone:</label>
-  <input type="text" id="phone" name="phone" th:value="${client.phone}"><br><br>
-  <input type="submit" value="Update Client">
-</form>
+        <div class="field">
+          <div class="control">
+            <input class="button is-primary" type="submit" value="Update Client">
+          </div>
+        </div>
 
-<h2>Delete your client information</h2>
-<form th:action="@{/clients/{id}(id=${client.id})}" th:method="delete">
-  <input type="submit" value="Delete Client">
-  <button onclick="deleteClient()"></button>
-</form>
-
-<!-- Button to view client information -->
-<h2>View your information</h2>
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Phone</th>
-    <th>Actions</th>
-  </tr>
-  <tr th:each="client : ${clients}">
-    <td th:text="${client.name}">Name</td>
-    <td th:text="${client.email}">Email</td>
-    <td th:text="${client.phone}">Phone</td>
-    <td>
-      <a th:href="@{/clients/{id}(id=${client.id})}">View</a>
-      <a th:href="@{/clients/{id}/edit(id=${client.id})}">Edit</a>
-      <form th:action="@{/clients/{id}(id=${client.id})}" th:method="delete">
-        <input type="submit" value="Delete">
+        <div class="field">
+          <div class="control">
+            <a class="button is-link" href="/clients">Back to Clients</a>
+          </div>
+        </div>
       </form>
-    </td>
-  </tr>
-</table>
-<button onclick="viewClient()">View Client Info</button>
+    </div>
+  </div>
+</section>
 
-<!-- Form to create an animal -->
-<h2>Add animal information</h2>
-<label for="animalName">Name:</label>
-<input type="text" id="animalName"><br>
-<label for="animalSpecies">Species:</label>
-<input type="text" id="animalSpecies"><br>
-<label for="animalAge">Age:</label>
-<input type="number" id="animalAge"><br>
-<button onclick="createAnimal()">Create Animal</button>
+<section class="section">
+  <div class="container">
+    <div class="form-container">
+      <h2 class="title is-3">Update Animal Information</h2>
+      <form id="updateAnimalForm">
+        <div class="field">
+          <label class="label" for="animalName">Animal Name:</label>
+          <div class="control">
+            <input class="input" type="text" id="animalName" name="animalName">
+          </div>
+        </div>
 
-<!-- Form to update animal -->
-<h2>Update Animal information</h2>
-<label for="animalId">Animal ID:</label>
-<input type="text" id="animalId"><br>
-<button onclick="updateAnimal()">Update Animal information</button>
-</body>
+        <div class="field">
+          <div class="control">
+            <button class="button is-primary" onclick="updateAnimal()">Update Animal Information</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
 
 </html>
