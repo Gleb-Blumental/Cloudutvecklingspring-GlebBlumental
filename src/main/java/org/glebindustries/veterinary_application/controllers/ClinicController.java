@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/api/clinic")
+@RequestMapping("/clinic")
 public class ClinicController {
     @Autowired
     private final ClinicService clinicService;

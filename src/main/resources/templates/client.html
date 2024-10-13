@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,8 +17,8 @@
   <div class="container">
     <div class="form-container">
       <h2 class="title is-3">Update your Profile Information</h2>
-      <form th:action="@{/clients/{id}(id=${client.id})}" th:method="put">
-        <div class="field">
+       <form th:action="@{/clients/{id}(id=${client.id})}" th:method="put">
+      <div class="field">
           <label class="label" for="name">Name:</label>
           <div class="control">
             <input class="input" type="text" id="name" name="name" th:value="${client.name}" required>

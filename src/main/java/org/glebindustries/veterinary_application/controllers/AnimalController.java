@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/animals")
+@RequestMapping("/animals")
 public class AnimalController {
 
     @Autowired
