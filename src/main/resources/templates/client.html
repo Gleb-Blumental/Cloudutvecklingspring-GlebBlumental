@@ -12,11 +12,9 @@
 <h2>Create Your Profile</h2>
 <form th:action="@{/clients}" th:method="post">
   <label for="name">Name:</label>
-  <input type="text" id="name" name="name" th:value="${client.name}"><br><br>
+  <input type="text" name="name" th:value="${client.name}"><br><br>
   <label for="email">Email:</label>
-  <input type="email" id="email" name="email" th:value="${client.email}"><br><br>
-  <label for="phone">Phone:</label>
-  <input type="text" id="phone" name="phone" th:value="${client.phone}"><br><br>
+  <input type="text" name="phone" th:value="${client.phone}"><br><br>
   <input type="submit" value="Create Client">
 </form>
 
