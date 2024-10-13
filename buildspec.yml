@@ -35,7 +35,7 @@ phases:
 
   post_build:
     commands:
-      - echo "Post-build phase: preparing deployment package"
+      - echo "Post-build phase preparing deployment package"
       - mkdir -p deploy
       - cp target/*.jar deploy/
       - echo "Creating application version"
