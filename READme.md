@@ -48,15 +48,23 @@ undviker du att manuellt hantera infrastrukturen och kan fokusera mer på applik
     - Skapa en miljö (t.ex. för produktion eller test) och välj önskad infrastruktur (EC2, Load Balancer, etc.).
     - Länk till Elastic Beanstalk-dokumentation:
     - Steg för steg bilder:
-      ![Beanstalk1](./Beanstalk1.png)
-      ![Beanstalk2](./Beanstalk2.png)
-      ![Beanstalk3](./Beanstalk3.png)
-      ![Beanstalk4](./Beanstalk4.png)
-      ![Beanstalk5](./Beanstalk5.png)
-      ![Beanstalk6](./Beanstalk6.png)
-      ![Beanstalk7](./Beanstalk7.png)
-      ![Beanstalk8](./Beanstalk8.png)
-    - Länk till guide om Jenkins installation:
+    - Gå in på beanstalk och tryck på "Create Application"
+      ![Beanstalk1](images/Beanstalk1.png)
+    - Då har Applikationen konfigurerats och nu trycker du på "Create Environment"
+      ![Beanstalk2](images/Beanstalk2.png)
+    - Namnge miljö och välj plattformen som applikationen ska köras på, du kan också välja domänen
+      ![Beanstalk3](images/Beanstalk3.png)
+    - Välj eller skaffa en ny service roll för miljön
+      ![Beanstalk4](images/Beanstalk4.png)
+    - Välj en VPC och databas ifall det behövs
+      ![Beanstalk5](images/Beanstalk5.png)
+    - Välj containrar och konfigurera CloudWatch, samt vilken EC2 instansgrupp ska applikationen tillhöra
+      ![Beanstalk6](images/Beanstalk6.png)
+    - Vidare förinställning för EC2 instanser
+      ![Beanstalk7](images/Beanstalk7.png)
+    - Översikt över alla dina inställningar, tryck på "Submit" om allt stämmer
+      ![Beanstalk8](images/Beanstalk8.png)
+    - Länk till guide om Elastic Beanstalk installation:
       !(https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html)
 
 2. **Skapa AWS CodePipeline**:
@@ -65,8 +73,18 @@ undviker du att manuellt hantera infrastrukturen och kan fokusera mer på applik
     - Anslut pipelinen till ditt GitHub-repository.
     - Konfigurera bygg- och driftsättningssteg med hjälp av AWS CodeBuild- och CodeDeploy-tjänsterna.
     - Steg för steg bilder:
-      ![Pipeline1](./Pipeline1.png)
-      ![Pipeline2](./Pipeline2.png)
+    - Tryck på "Create pipeline" i dashboard, namnge applikationen och välj en service roll åt pipelinen
+      ![Pipeline1](images/Pipeline1.png)
+    - Välj källan för din kod, i vårt fall det är GitHub
+      ![Pipeline2](images/Pipeline2.png)
+    - Välj repositoryn från GitHub och vilken branch ska alla uppdateringar hämtas ifrån
+      ![Pipeline3](images/Pipeline3.png)
+    - Välj hur applikationen ska byggas, i vårt fall det är CodeBuild
+      ![Pipeline4](images/Pipeline4.png)
+    - Deploy provider är Elastic beanstalk som vi tidigare har konfigurerat
+      ![Pipeline5](images/Pipeline5.png)
+    - Översikt och skaffa
+      ![Pipeline6](images/Pipeline6.png)
     - Dokumentation:
       !(https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html)
 
