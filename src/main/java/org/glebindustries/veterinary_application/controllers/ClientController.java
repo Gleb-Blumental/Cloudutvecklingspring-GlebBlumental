@@ -18,7 +18,7 @@ public class ClientController {
     @Autowired
     private final ClientService clientService;
 
-    @PostMapping
+    @PostMapping("/add")
     public ResponseEntity<String> createClient(@RequestBody Client client){
 
         var created = clientService.createClient(client);
@@ -31,13 +31,13 @@ public class ClientController {
 
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<Iterable<Client>> getAllClients(){
         var clients = clientService.getAllClients();
         return new ResponseEntity<>(clients, HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("getby/{id}")
     public ResponseEntity<Client> getClientById(@PathVariable Long clientId){
         var client = clientService.getClientById(clientId);
 
@@ -49,7 +49,7 @@ public class ClientController {
 
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<String> updateClient(@PathVariable Long clientId, @RequestBody Client client){
         var isUpdated = clientService.updateClient(clientId, client);
 
@@ -60,7 +60,7 @@ public class ClientController {
         }
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete")
     public ResponseEntity deleteClient(@PathVariable Long clientId){
         var isDeleted = clientService.deleteClient(clientId);
 

@@ -23,13 +23,5 @@ public class MainController {
     public String getMenuPage() {
         return "menu"; // This points to templates/menu.html
     }
-    @GetMapping("/client")
-    public String getClientPage() {
-        return "client";
-    }
 
-    @GetMapping("/clinic")
-    public String getClinicPage() {
-        return "clinic"; // This points to templates/menu.html
-    }
 }

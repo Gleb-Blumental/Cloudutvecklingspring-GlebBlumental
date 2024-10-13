@@ -18,13 +18,13 @@ public class AnimalController {
     @Autowired
     private final AnimalService animalService;
 
-    @GetMapping
+    @GetMapping("/allanimals")
     public ResponseEntity<Iterable<Animal>> getAllAnimals() {
         var clients = animalService.getAllAnimals();
         return new ResponseEntity<>(clients, HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("getanimal/{id}")
     public ResponseEntity<Animal> getAnimalById(@PathVariable Long id) {
         var animal = animalService.getAnimalById(id);
 
@@ -32,7 +32,7 @@ public class AnimalController {
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    @PostMapping
+    @PostMapping("/createanimal")
     public ResponseEntity<String> createAnimal(@RequestBody Animal animal) {
         var created = animalService.addAnimal(animal);
 
@@ -43,7 +43,7 @@ public class AnimalController {
         }
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/updateanimal")
     public ResponseEntity<String> updateAnimal (@PathVariable Long id, @RequestBody Animal animal) {
         var updatedAnimal = animalService.updateAnimal(id, animal);
         if (updatedAnimal != null) {
@@ -53,7 +53,7 @@ public class AnimalController {
         }
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/deleteanimal")
     public ResponseEntity<String> deleteAnimal(@PathVariable Long id) {
 
         var isDeleted = animalService.deleteAnimal(id);

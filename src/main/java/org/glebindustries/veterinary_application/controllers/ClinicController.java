@@ -15,7 +15,7 @@ public class ClinicController {
     @Autowired
     private final ClinicService clinicService;
 
-    @PostMapping
+    @PostMapping("/addclinic")
     public ResponseEntity<String> createClinic(Clinic clinic){
         var created = clinicService.createClinic(clinic);
 
@@ -33,7 +33,7 @@ public class ClinicController {
         return new ResponseEntity<>(clinics, HttpStatus.OK);
     }
 
-    @PutMapping
+    @PutMapping("/updateclinic")
     public ResponseEntity<String> updateClinic(@PathVariable Long clinicId, @RequestBody Clinic clinic){
         var updated = clinicService.updateClinic(clinicId, clinic);
 
@@ -44,7 +44,7 @@ public class ClinicController {
         }
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/deleteclinic")
     public ResponseEntity<String> deleteClinic(@PathVariable Long clinicId){
         var deleted = clinicService.deleteClinic(clinicId);
 

@@ -19,7 +19,7 @@
   <div class="container">
     <div class="form-container">
       <h2 class="title is-3">Add Clinic Information</h2>
-      <form id="createClinicForm">
+      <form th:action="@{/clinic/{id}(id=${clinic?.id})}" th:method="put">
         <div class="field">
           <label class="label" for="clinicName">Clinic Name:</label>
           <div class="control">
@@ -48,7 +48,7 @@
   <div class="container">
     <div class="form-container">
       <h2 class="title is-3">Update Clinic Information</h2>
-      <form th:action="@{/clinics/update}" method="post">
+      <form th:action="@{/clinic/update}" method="post">
         <div class="field">
           <label class="label" for="clinicId">Clinic ID:</label>
           <div class="control">
