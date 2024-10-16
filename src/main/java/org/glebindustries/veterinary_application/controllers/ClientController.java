@@ -18,6 +18,11 @@ public class ClientController {
     @Autowired
     private final ClientService clientService;
 
+    @GetMapping("/clients")
+    public String clientPage(){
+        return "client";
+    }
+
     @PostMapping("/add")
     public ResponseEntity<String> createClient(@RequestBody Client client){
 

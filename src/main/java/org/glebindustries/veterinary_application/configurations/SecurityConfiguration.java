@@ -18,7 +18,7 @@ public class SecurityConfiguration {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf(Customizer.withDefaults())
                 .authorizeHttpRequests(authz -> authz
-                        .requestMatchers("/", "/home", "login", "/api/clinic", "/api/client").permitAll()
+                        .requestMatchers("/", "/home", "/login", "/clinic", "/clients").permitAll()
                         .anyRequest().authenticated())
                 .oauth2Login(oauth2 -> oauth2
                         .loginPage("/oauth2/code/cognito")

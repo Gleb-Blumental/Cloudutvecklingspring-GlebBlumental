@@ -15,6 +15,11 @@ public class ClinicController {
     @Autowired
     private final ClinicService clinicService;
 
+    @GetMapping("/clinic")
+    public String clinicPage() {
+        return "clinic";
+    }
+
     @PostMapping("/addclinic")
     public ResponseEntity<String> createClinic(Clinic clinic){
         var created = clinicService.createClinic(clinic);

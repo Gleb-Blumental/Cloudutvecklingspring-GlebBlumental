@@ -23,5 +23,8 @@ public class MainController {
     public String getMenuPage() {
         return "menu"; // This points to templates/menu.html
     }
-
+    @GetMapping("/logout")
+    public String showLogoutPage() {
+        return "logout";
+    }
 }
