@@ -29,7 +29,8 @@ phases:
       - echo "Creating application version"
       - echo `date +%Y-%m-%d-%H-%M-%S` > version.txt
       - cat version.txt
-
+      - mkdir -p deploy
+      - cp target/*.jar deploy/
 artifacts:
   files:
     - deploy/**/*
