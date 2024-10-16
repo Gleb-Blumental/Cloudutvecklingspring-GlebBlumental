@@ -110,7 +110,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>VeterinaryClinicApplication</finalName>
+		<finalName>Cloudutvecklingspring-GlebBlumental</finalName>
 	</build>
 
 </project>
