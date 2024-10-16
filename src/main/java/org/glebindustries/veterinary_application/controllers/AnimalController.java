@@ -16,7 +16,7 @@ import java.util.Optional;
 public class AnimalController {
 
     @Autowired
-    private final AnimalService animalService;
+    private AnimalService animalService;
 
     @GetMapping("/allanimals")
     public ResponseEntity<Iterable<Animal>> getAllAnimals() {
