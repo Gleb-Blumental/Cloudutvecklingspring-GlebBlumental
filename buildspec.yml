@@ -1,17 +1,6 @@
 version: 0.2
 os: linux
 
-eb_codebuild_settings:
-  application: CloudUtveckling-GB
-  environment: CloudUtveckling-GB-env
-  ComputeType: BUILD_GENERAL1_SMALL
-  Image: aws/codebuild/amazonlinux2-x86_64-standard:3.0
-  Timeout: 30
-  aws:codebuild:
-    CodeBuildServiceRole: arn:aws:iam::332935753543:role/CodeBuildServiceRole
-
-
-  version_label: 1
 
 phases:
   install:
