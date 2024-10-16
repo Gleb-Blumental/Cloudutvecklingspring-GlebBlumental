@@ -110,7 +110,6 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>veterinary_application</finalName>
 	</build>
 
 </project>
