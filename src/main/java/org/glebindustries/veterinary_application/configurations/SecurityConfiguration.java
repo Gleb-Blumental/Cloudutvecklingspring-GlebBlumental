@@ -18,7 +18,7 @@ public class SecurityConfiguration {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf(Customizer.withDefaults())
                 .authorizeHttpRequests(authz -> authz
-                        .requestMatchers("/", "/home", "/login", "/clinic", "/clients").permitAll()
+                        .requestMatchers("/", "/home", "/logout", "/clinic", "/clients").permitAll()
                         .anyRequest().authenticated())
                 .oauth2Login(oauth2 -> oauth2
                         .loginPage("/oauth2/code/cognito")
@@ -26,7 +26,7 @@ public class SecurityConfiguration {
                         .failureUrl("/login?error=true"))
 
                 .logout(logout -> logout
-                        .logoutSuccessUrl("/home")
+                        .logoutSuccessUrl("/")
                         .invalidateHttpSession(true)
                         .clearAuthentication(true));
 
