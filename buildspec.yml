@@ -4,7 +4,7 @@ os: linux
 phases:
   install:
     runtime-versions:
-      java: corretto211
+      java: corretto21
     commands:
       - echo Installing Maven...
       - yum install -y maven
