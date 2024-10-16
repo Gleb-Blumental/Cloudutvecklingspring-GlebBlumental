@@ -12,27 +12,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class CognitoWebConfiguration implements WebMvcConfigurer {
-    @Bean
-    public OAuth2AuthorizedClientService authorizedClientService(ClientRegistrationRepository clientRegistrationRepository) {
-        return new InMemoryOAuth2AuthorizedClientService(clientRegistrationRepository);
-    }
-
-    @Bean
-    public ClientRegistrationRepository clientRegistrationRepository() {
-        return new InMemoryClientRegistrationRepository(this.cognitoClientRegistration());
-    }
-
-    private ClientRegistration cognitoClientRegistration() {
-        return ClientRegistration.withRegistrationId("cognito")
-                .clientId("your-cognito-client-id")
-                .clientSecret("your-cognito-client-secret")
-                .scope("openid", "profile", "email")
-                .authorizationUri("https://your-cognito-domain/oauth2/authorize")
-                .tokenUri("https://your-cognito-domain/oauth2/token")
-                .userInfoUri("https://your-cognito-domain/oauth2/userInfo")
-                .clientName("Cognito")
-                .build();
-    }
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("home");
