@@ -6,16 +6,17 @@ import org.glebindustries.veterinary_application.service.ClinicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 @AllArgsConstructor
 @RequestMapping("/clinic")
 public class ClinicController {
     @Autowired
     private final ClinicService clinicService;
 
-    @GetMapping("/clinic")
+    @GetMapping
     public String clinicPage() {
         return "clinic";
     }
@@ -32,11 +33,7 @@ public class ClinicController {
 
     }
 
-    @GetMapping
-    public ResponseEntity<Iterable<Clinic>> getAllClinics(){
-        var clinics = clinicService.getAllClinics();
-        return new ResponseEntity<>(clinics, HttpStatus.OK);
-    }
+
 
     @PutMapping("/updateclinic")
     public ResponseEntity<String> updateClinic(@PathVariable Long clinicId, @RequestBody Clinic clinic){
