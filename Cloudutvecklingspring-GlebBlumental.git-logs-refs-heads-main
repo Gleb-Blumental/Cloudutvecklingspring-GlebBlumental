@@ -1,0 +1,29 @@
+0000000000000000000000000000000000000000 2d6aba91bac2923a849aa5bfe269ac6b69600dd1 Gle_Blu <127569304+Mepuzan@users.noreply.github.com> 1728482943 +0200	commit (initial): Initial commit
+2d6aba91bac2923a849aa5bfe269ac6b69600dd1 bba16a6b41055acdd4d22d16453574a444a13893 Gle_Blu <127569304+Mepuzan@users.noreply.github.com> 1728483093 +0200	commit: Cloned existing repo
+bba16a6b41055acdd4d22d16453574a444a13893 4992dd43b01a1c3d6e6138e56aa575a1f1d9d5d4 Gle_Blu <127569304+Mepuzan@users.noreply.github.com> 1728485249 +0200	commit: Delete .gitattributes
+4992dd43b01a1c3d6e6138e56aa575a1f1d9d5d4 7c4892b287008ca63b2a8eaa0df5d967dae17a96 Gle_Blu <127569304+Mepuzan@users.noreply.github.com> 1728485859 +0200	commit: Create buildspec.yml
+7c4892b287008ca63b2a8eaa0df5d967dae17a96 7d47d2c0b0ceb39169d0f3b9f0add2c947fd4527 Gle_Blu <127569304+Mepuzan@users.noreply.github.com> 1728486481 +0200	commit: Update buildspec.yml
+7d47d2c0b0ceb39169d0f3b9f0add2c947fd4527 490a016ca9379d49d60113f17712783fb98fe060 Gle_Blu <127569304+Mepuzan@users.noreply.github.com> 1728647748 +0200	commit: Update Buildspec, Update controllers, update html files
+490a016ca9379d49d60113f17712783fb98fe060 6c40029569fc00a31b6cc681cd84aa446d31c262 Gle_Blu <127569304+Mepuzan@users.noreply.github.com> 1728648808 +0200	commit: update buildspec and html
+6c40029569fc00a31b6cc681cd84aa446d31c262 c3a2611ee51d1617d98234f4bbd33ab534da0395 Gle_Blu <127569304+Mepuzan@users.noreply.github.com> 1728649722 +0200	commit: Update client.html
+c3a2611ee51d1617d98234f4bbd33ab534da0395 038eb8d0deb0bc61bfc445a10ddc48da49b64ceb Gle_Blu <127569304+Mepuzan@users.noreply.github.com> 1728654776 +0200	commit: update buildspec.yml + gitignore
+038eb8d0deb0bc61bfc445a10ddc48da49b64ceb da52bda9cf41260e6ec992227006b681b8659fa6 Gle_Blu <127569304+Mepuzan@users.noreply.github.com> 1728677176 +0200	commit: update gitignore, buildspec and main controller
+da52bda9cf41260e6ec992227006b681b8659fa6 66f8be0375e619c3dfb18f82e00a677acd268f8e Gle_Blu <127569304+Mepuzan@users.noreply.github.com> 1728677348 +0200	commit: Update buildspec.yml
+66f8be0375e619c3dfb18f82e00a677acd268f8e 9b143fccc07b908255d64f8ed401aa35d077026c Gle_Blu <127569304+Mepuzan@users.noreply.github.com> 1728677693 +0200	commit: Update buildspec.yml
+9b143fccc07b908255d64f8ed401aa35d077026c 3b91a291d35cac903381eeac501f48d44c7b7f16 Gle_Blu <127569304+Mepuzan@users.noreply.github.com> 1728679572 +0200	commit: update buildspec yml, fix maincontroller
+3b91a291d35cac903381eeac501f48d44c7b7f16 875a05fb2d59968e17e2cdd01dc6bbf9ee037c65 Gle_Blu <127569304+Mepuzan@users.noreply.github.com> 1728680209 +0200	commit: Update buildspec.yml
+875a05fb2d59968e17e2cdd01dc6bbf9ee037c65 9d01e707ad043e3114a7a22b743c911e1b0a2b3b Gle_Blu <127569304+Mepuzan@users.noreply.github.com> 1728681021 +0200	commit: Update buildspec.yml
+9d01e707ad043e3114a7a22b743c911e1b0a2b3b f13cbce8facfe49e67c3c3415e29ea0da5a2d593 Gle_Blu <127569304+Mepuzan@users.noreply.github.com> 1728681065 +0200	commit: Update buildspec.yml
+f13cbce8facfe49e67c3c3415e29ea0da5a2d593 61b514ac190f069943c2896164d7fdd4a0fd4427 Gle_Blu <127569304+Mepuzan@users.noreply.github.com> 1728683486 +0200	commit: buildspec and security config update
+61b514ac190f069943c2896164d7fdd4a0fd4427 43ea9b67667745cf9274e626d039111442d80c39 Gle_Blu <127569304+Mepuzan@users.noreply.github.com> 1728806902 +0200	commit: Update buildspec.yml
+43ea9b67667745cf9274e626d039111442d80c39 48fd03b8c386fa4b070ce13dc130753cefe7fa29 Gle_Blu <127569304+Mepuzan@users.noreply.github.com> 1728808190 +0200	commit: Update pictures and READme.md
+48fd03b8c386fa4b070ce13dc130753cefe7fa29 64e41654ac9bad2133b955a753b8d4e34045da6c Gle_Blu <127569304+Mepuzan@users.noreply.github.com> 1728810734 +0200	commit: Create codebuild-settings.config
+64e41654ac9bad2133b955a753b8d4e34045da6c e0c216d573b8af241d644837d89a952f75ec9484 Gle_Blu <127569304+Mepuzan@users.noreply.github.com> 1728810964 +0200	commit: service role and build settings updated
+e0c216d573b8af241d644837d89a952f75ec9484 d7a455f9e228e89871f463ab69ba3aff1250f585 Gle_Blu <127569304+Mepuzan@users.noreply.github.com> 1728811067 +0200	commit: Update READme.md
+d7a455f9e228e89871f463ab69ba3aff1250f585 250589c7a3522d39ea91d44475f6688af066eacf Gle_Blu <127569304+Mepuzan@users.noreply.github.com> 1728811197 +0200	commit: Update READme.md
+250589c7a3522d39ea91d44475f6688af066eacf 6d48a88011cbfbff957debfd616c0ae8ceee9c42 Gle_Blu <127569304+Mepuzan@users.noreply.github.com> 1728813610 +0200	commit: Update client.html
+6d48a88011cbfbff957debfd616c0ae8ceee9c42 d4da8848cb1c7b70ee5d982106bd13d9440616e8 Gle_Blu <127569304+Mepuzan@users.noreply.github.com> 1728814169 +0200	commit: Update client.html
+d4da8848cb1c7b70ee5d982106bd13d9440616e8 46b9a21c5879bc8f9869b185c792841c21e49f0f Gle_Blu <127569304+Mepuzan@users.noreply.github.com> 1728814579 +0200	commit: bugfix
+46b9a21c5879bc8f9869b185c792841c21e49f0f 7aba05f3eefdf28fd55a4927f16411d0cca26f6f Gle_Blu <127569304+Mepuzan@users.noreply.github.com> 1728815784 +0200	commit: bugfix
+7aba05f3eefdf28fd55a4927f16411d0cca26f6f 21621ef2dfb72bb4a0fa4e63495d60915f1074f4 Gle_Blu <127569304+Mepuzan@users.noreply.github.com> 1728815883 +0200	commit: Update client.html
+21621ef2dfb72bb4a0fa4e63495d60915f1074f4 25f9d92b9787bfb89aca8ba9546f01b8d19571cd Gle_Blu <127569304+Mepuzan@users.noreply.github.com> 1728820718 +0200	commit: bugfixes
