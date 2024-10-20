@@ -6,33 +6,100 @@
   <title>Client Page</title>
 </head>
 <body>
+<h1>Client Management</h1>
+
 <nav class="navbar">
-  <a class="navbar-item" href="/home">Home</a>
-  <a class="navbar-item" href="/clinic">Clinic page</a>
-  <a class="navbar-item" href="/menu">Menu</a>
-  <a class="navbar-item" href="/logout">Logout</a>
+    <a href="/home">Home</a>
+    <a href="/clinic">Clinic</a>
+    <a href="/menu">Menu</a>
 </nav>
 
 <section class="section">
+    <div class="container">
+        <div class="form-container">
+            <h2 class="title is-3">Add Client Information</h2>
+            <form th:action="@{/client/{id}(id=${client?.id})}" th:method="put">
+                <div class="field">
+                    <label class="label" for="clientName">Profile name:</label>
+                    <div class="control">
+                        <input class="input" type="text" id="clientName" name="clientName" placeholder="Enter profile name">
+                    </div>
+                </div>
 
+                <div class="field">
+                    <label class="label" for="phoneNumber">Your number:</label>
+                    <div class="control">
+                        <input class="input" type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter phone number" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-primary" type="button" onclick="createclient()">Add Client Information</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </section>
 
 <section class="section">
-  <div class="container">
-    <div class="form-container">
-      <h2 class="title is-3">Update your Profile Information</h2>
+    <div class="container">
+        <div class="form-container">
+            <h2 class="title is-3">Update Client Information</h2>
+            <form th:action="@{/client/update}" method="post">
+                <div class="field">
+                    <label class="label" for="clientId">Client ID:</label>
+                    <div class="control">
+                        <input class="input" type="text" id="clientId" name="clientId" placeholder="Enter client ID" required>
+                    </div>
+                </div>
 
+                <div class="field">
+                    <label class="label" for="newClientName">New Client Name:</label>
+                    <div class="control">
+                        <input class="input" type="text" id="newClientName" name="Name" placeholder="Enter new client name">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label" for="newPhoneNumber">New Client Phone:</label>
+                    <div class="control">
+                        <input class="input" type="text" id="newPhoneNumber" name="phoneNumber" placeholder="Enter new client phone">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-primary" type="submit">Update client Information</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-  </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="form-container">
-      <h2 class="title is-3">Update Animal Information</h2>
 
+<section class="section">
+    <div class="container">
+        <div class="form-container">
+            <h2 class="title is-3">View Client Information</h2>
+            <form th:action="@{/client/}" th:method="put">
+                <div class="field">
+                    <label class="label" for="viewClientId">Client ID:</label>
+                    <div class="control">
+                        <input class="input" type="text" id="viewClientId" name="viewClientId" placeholder="Enter client ID" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-primary" type="button" onclick="getby/{id}">View Client Info</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-  </div>
 </section>
 
 </body>

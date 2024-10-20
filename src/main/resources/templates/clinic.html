@@ -9,10 +9,9 @@
 <h1>Clinic Management</h1>
 
 <nav class="navbar">
-  <a class="navbar-item" href="/home">Home</a>
-  <a class="navbar-item" href="/clients">Clients page</a>
-  <a class="navbar-item" href="/menu">Menu</a>
-  <a class="navbar-item" href="/logout">Logout</a>
+  <a href="/home">Home</a>
+  <a href="/client">Client</a>
+  <a href="/menu">Menu</a>
 </nav>
 
 <section class="section">
@@ -36,7 +35,7 @@
 
         <div class="field">
           <div class="control">
-            <button class="button is-primary" type="button" onclick="createClinic()">Add Clinic Information</button>
+            <button class="button is-primary" type="button" onclick="@{/clinic/addclinic}">Add Clinic Information</button>
           </div>
         </div>
       </form>
@@ -73,29 +72,6 @@
         <div class="field">
           <div class="control">
             <button class="button is-primary" type="submit">Update Clinic Information</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="container">
-    <div class="form-container">
-      <h2 class="title is-3">View Clinic Information</h2>
-      <form id="viewClinicForm">
-        <div class="field">
-          <label class="label" for="viewClinicId">Clinic ID:</label>
-          <div class="control">
-            <input class="input" type="text" id="viewClinicId" name="viewClinicId" placeholder="Enter clinic ID" required>
-          </div>
-        </div>
-
-        <div class="field">
-          <div class="control">
-            <button class="button is-primary" type="button" onclick="viewClinic()">View Clinic Info</button>
           </div>
         </div>
       </form>
