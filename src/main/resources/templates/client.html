@@ -18,7 +18,7 @@
     <div class="container">
         <div class="form-container">
             <h2 class="title is-3">Add Client Information</h2>
-            <form th:action="@{/client/{id}(id=${client?.id})}" th:method="put">
+            <form th:action="@{/client/add}" th:method="post">
                 <div class="field">
                     <label class="label" for="clientName">Profile name:</label>
                     <div class="control">
@@ -48,6 +48,7 @@
         <div class="form-container">
             <h2 class="title is-3">Update Client Information</h2>
             <form th:action="@{/client/update}" method="post">
+                <input type="hidden" name="_method" value="put">
                 <div class="field">
                     <label class="label" for="clientId">Client ID:</label>
                     <div class="control">
@@ -84,8 +85,8 @@
     <div class="container">
         <div class="form-container">
             <h2 class="title is-3">View Client Information</h2>
-            <form th:action="@{/client/}" th:method="put">
-                <div class="field">
+            <form th:action="@{/client/{id}(id=${client?.id})}" th:method="get">
+            <div class="field">
                     <label class="label" for="viewClientId">Client ID:</label>
                     <div class="control">
                         <input class="input" type="text" id="viewClientId" name="viewClientId" placeholder="Enter client ID" required>
@@ -94,7 +95,8 @@
 
                 <div class="field">
                     <div class="control">
-                        <button class="button is-primary" type="button" onclick="getby/{id}">View Client Info</button>
+                        <button class="button is-primary" type="button" onclick="viewClient()">View Client Info</button>
+
                     </div>
                 </div>
             </form>

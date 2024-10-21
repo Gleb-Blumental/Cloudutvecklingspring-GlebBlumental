@@ -71,9 +71,9 @@ public class ClientController {
         var isDeleted = clientService.deleteClient(clientId);
 
         if(isDeleted){
-            return new ResponseEntity<>("Dog ID is deleted", HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>("Client ID is deleted", HttpStatus.NO_CONTENT);
         }else {
-            return new ResponseEntity("Could not find the dog by ID", HttpStatus.NOT_FOUND);
+            return new ResponseEntity("Could not find the client by ID", HttpStatus.NOT_FOUND);
         }
     }
 

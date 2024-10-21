@@ -26,7 +26,8 @@ public class SecurityConfiguration {
                         .failureUrl("/login?error=true"))
 
                 .logout(logout -> logout
-                        .logoutSuccessUrl("/")
+                        .logoutUrl("/logout")
+                        .logoutSuccessUrl("/home")
                         .invalidateHttpSession(true)
                         .clearAuthentication(true));
 
